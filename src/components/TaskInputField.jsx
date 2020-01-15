@@ -46,6 +46,7 @@ function TaskInputField() {
             }
 
         } catch(ex) {
+            console.error(ex);
             setError(ex.message);
         }
     };
