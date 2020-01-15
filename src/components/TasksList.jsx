@@ -9,9 +9,10 @@ function TasksList() {
     const {tasks=[], email} = useSelector(state => state.user);
     const dispatch = useDispatch();
 
-    const handleDelete = (id) => {
+    const handleDelete = async(id) => {
         try {
-            deleteTaskFake(id, email);
+            // Fake request to the server )
+            await deleteTaskFake(id, email);
             dispatch(deleteTaskAction(id));
             dispatch(clearFieldAction());
         }catch(ex) {

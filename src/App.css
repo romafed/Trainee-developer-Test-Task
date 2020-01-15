@@ -50,7 +50,7 @@ form footer {
     width: 400px;
 }
 
-.logInButton {
+.logoutButton {
     position: absolute;
     top: 1rem;
     right: 1rem;

@@ -4,7 +4,7 @@ import RegistrationForm from '../components/RegistrationForm';
 function Registration() {
     return (
             <section>
-            <RegistrationForm/>
+                <RegistrationForm/>
             </section>
 
     )

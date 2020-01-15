@@ -1,6 +1,6 @@
 import React from 'react';
 import { useFormik } from 'formik';
-import { loginValidation } from '../utils/formValidations';
+import { loginValidation } from '../formValidations';
 import { Link, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { userLoginFake } from '../fakeServerApi';

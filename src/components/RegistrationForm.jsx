@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 import Input from './common/Input';
 import Button from '@material-ui/core/Button';
 import Alert from '@material-ui/lab/Alert';
-import { registrationValidation } from '../utils/formValidations';
+import { registrationValidation } from '../formValidations';
 import { userRegistrationFake } from '../fakeServerApi';
 import { useHistory } from 'react-router-dom';
 

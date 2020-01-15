@@ -21,7 +21,7 @@ const TaskListPage = () => {
 
     return (
         <>
-            <LogOutButton className='logInButton'/>
+            <LogOutButton className='logoutButton'/>
             <section className='taskWrapper'>
                 <TaskInputField/>
                 <TasksList/>
