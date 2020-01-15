@@ -7,6 +7,7 @@ import { deleteTaskFake } from '../fakeServerApi';
 function TasksList() {
 
     const {tasks=[], email} = useSelector(state => state.user);
+    const fieldAction = useSelector(state => state.fieldAction);
     const dispatch = useDispatch();
 
     const handleDelete = async(id) => {
@@ -26,6 +27,7 @@ function TasksList() {
             <p className='emptyTaskList'>Task list is empty</p> :
              tasks.map(item => (
                 <Task 
+                    active={fieldAction && fieldAction.taskId}
                     key={item.id}
                     item={item}
                     onDelete={handleDelete}

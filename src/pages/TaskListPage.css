@@ -10,6 +10,11 @@
     padding: 1rem;
 }
 
+.taskField {
+    -webkit-box-shadow: 3px 1px 13px 1px rgba(0,0,0,0.51); 
+    box-shadow: 3px 1px 13px 1px rgba(0,0,0,0.51);
+}
+
 .tasksList {
     flex: 1;
     overflow: hidden auto;
@@ -25,7 +30,6 @@
 }
 
 .task {
-    background-color: #434279;
     padding: .8rem;
     border-radius: 5px;
     -webkit-box-shadow: 3px 1px 13px 1px rgba(0,0,0,0.51); 

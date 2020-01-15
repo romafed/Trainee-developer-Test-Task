@@ -69,9 +69,10 @@ function TaskInputField() {
         <form onSubmit={handleSubmit}>
             <div>
                 <TextField
+                    className='taskField'
                     fullWidth
-                    variant="outlined"
-                    label={action ? `${action} Task` : 'Add Task'}
+                    variant="filled"
+                    label={action ? `Click to ${action} Task` : 'Add Task'}
                     placeholder={action === 'Share' ? 'Write user email' : ''}
                     name='input'
                     type='text'

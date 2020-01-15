@@ -35,7 +35,7 @@ export const addTaskAction = task => {
     };
 };
 
-export const editTaskAction = (taskId, title) => {
+export const editTaskAction = (taskId, title='') => {
     return {
         type: EDIT_TASK,
         payload: {taskId, title}

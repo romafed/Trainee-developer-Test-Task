@@ -1,8 +1,9 @@
 import React from 'react';
 
-function Task({item, onDelete, onEdit, onShare}) {
+function Task({active, item, onDelete, onEdit, onShare}) {
+
     return (
-        <div className='task'>
+        <div className='task' style={{ backgroundColor: active === item.id &&'green' }}>
             <div className='taskContent'>
                 <span>{item.title}</span>
                 {item.author ? <i>{`From: ${item.author}`}</i>: null}

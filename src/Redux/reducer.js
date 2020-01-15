@@ -35,12 +35,11 @@ const reducer = function(store=initialValue, action) {
             const { tasks } = store.user;
             let task = tasks.find(task => task.id === action.payload.taskId);
             const index = tasks.indexOf(task);
-            task.title = action.payload.title;
-            tasks[index] = {...task};
+            tasks[index].title = action.payload.title;
             return {
                 ...store, user: {
                     ...store.user,
-                    tasks
+                    tasks: [...tasks]
             }}
 
         case SHARE_TASK:
