@@ -6,14 +6,14 @@ import { deleteTaskFake } from '../fakeServerApi';
 
 function TasksList() {
 
-    const {tasks, email} = useSelector(state => state.user);
+    const {tasks=[], email} = useSelector(state => state.user);
     const dispatch = useDispatch();
 
-    const handleDelete = async(id) => {
+    const handleDelete = (id) => {
         try {
-            await deleteTaskFake(id, email);
-            dispatch(clearFieldAction());
+            deleteTaskFake(id, email);
             dispatch(deleteTaskAction(id));
+            dispatch(clearFieldAction());
         }catch(ex) {
             console.log(ex.message);
         }
@@ -21,7 +21,9 @@ function TasksList() {
 
     return (
         <div className='tasksList'>
-            {tasks && tasks.map(item => (
+            {tasks.length <= 0 ? 
+            <p className='emptyTaskList'>Task list is empty</p> :
+             tasks.map(item => (
                 <Task 
                     key={item.id}
                     item={item}
