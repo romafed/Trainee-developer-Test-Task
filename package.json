@@ -2,6 +2,10 @@
   "name": "test-task",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "10.16.3",
+    "npm": "6.13.6"
+  },
   "dependencies": {
     "@material-ui/core": "^4.8.3",
     "@material-ui/lab": "^4.0.0-alpha.39",
