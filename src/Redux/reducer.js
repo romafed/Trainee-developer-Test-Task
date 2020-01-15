@@ -20,7 +20,7 @@ const reducer = function(store=initialValue, action) {
         case ADD_TASK:
             return { 
                 ...store, user:{ 
-                    ...store.user, tasks: [{ id: Date.now(), title: action.payload }, ...store.user.tasks]
+                    ...store.user, tasks: [{ id: action.payload.id, title: action.payload.title }, ...store.user.tasks]
                 } 
             }  ;
         case DELETE_TASK:

@@ -20,9 +20,12 @@ export const addTaskFake = (task, email) => {
     const user = JSON.parse(localStorage.getItem(email));
     if (!user) throw new Error('Cant find user');
 
-    user.tasks = [{id: Date.now(), title: task}, ...user.tasks];
+    const newTask = {id: Date.now(), title: task}
+
+    user.tasks = [newTask, ...user.tasks];
     localStorage.setItem(email, JSON.stringify(user));
-    localStorage.setItem('currentUser', JSON.stringify(user));
+    localStorage.setItem('currentUser', JSON.stringify(user))
+    return newTask;
 }
 
 export const deleteTaskFake = (taskId, email) => {
@@ -40,6 +43,7 @@ export const editTaskFake = (taskId, title, email) => {
 
     const task = user.tasks.find(task => task.id === taskId);
     const index = user.tasks.indexOf(task);
+
     user.tasks[index].title = title;
 
     localStorage.setItem(email, JSON.stringify(user));

@@ -28,6 +28,7 @@ function TaskInputField() {
             switch(action) {
                 case 'Edit':
                     // Fake request to the server )
+                    console.log(value);
                     await editTaskFake(fieldAction.taskId, value, user.email);
                     dispatch(editTaskAction(fieldAction.taskId, value));
                     setInput('');
@@ -40,8 +41,8 @@ function TaskInputField() {
                     break
                 default:
                     // Fake request to the server )
-                    await addTaskFake(value, user.email);
-                    dispatch(addTaskAction(value));
+                    const task = await addTaskFake(value, user.email);
+                    dispatch(addTaskAction(task));
                     setInput('');
             }
 
