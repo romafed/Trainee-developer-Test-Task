@@ -27,19 +27,16 @@ function TaskInputField() {
 
             switch(action) {
                 case 'Edit':
-                    console.log('Edit Action');
                     editTaskFake(fieldAction.taskId, value, user.email);
                     dispatch(editTaskAction(fieldAction.taskId, value));
                     setInput('');
                     dispatch(clearFieldAction())
                     break
                 case 'Share':
-                    console.log('Share action')
                     shareTaskFake(fieldAction.title, user, value);
                     dispatch(clearFieldAction())
                     break
                 default:
-                    console.log('Add action')
                     await addTaskFake(value, user.email);
                     dispatch(addTaskAction(value));
                     setInput('');
